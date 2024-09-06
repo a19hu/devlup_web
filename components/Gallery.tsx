@@ -1,27 +1,28 @@
 import { cn } from "@/lib/utils";
 import Marquee from "@/components/magicui/marquee";
-import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
+import group1 from '@/public/WhatsApp Image 2024-09-06 at 21.27.13.jpeg'
+import group2 from '@/public/WhatsApp Image 2024-09-06 at 21.27.14.jpeg'
+import Image from 'next/image'
 
 const reviews = [
     {
-      img: "https://avatar.vercel.sh/jack",
+      img:group1,
     },
     {
-      img: "https://avatar.vercel.sh/jill",
+      img:group2,
     },
     {
-      img: "https://avatar.vercel.sh/john",
-    },
-    {
-      img: "https://avatar.vercel.sh/jack",
-    },
-    {
-      img: "https://avatar.vercel.sh/jill",
-    },
-    {
-      img: "https://avatar.vercel.sh/john",
-    },
-
+        img:group1,
+      },
+      {
+        img:group2,
+      },
+      {
+        img:group1,
+      },
+      {
+        img:group2,
+      },
   ];
    
   const firstRow = reviews.slice(0, reviews.length / 2);
@@ -31,18 +32,19 @@ export default function Gallery() {
 
     return (
         <>
-        <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background ">
-        <Marquee pauseOnHover className="[--duration:20s]">
+        <div className="relative flex  w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background ">
+        {/* <Marquee pauseOnHover className="[--duration:20s]">
           {firstRow.map((review) => (
-            <figure className={cn( "relative w-64 cursor-pointer overflow-hidden rounded-xl border p-2",)}>
-            <img  alt="" src={review.img} />
+            <figure className={cn( "relative w-80 cursor-pointer overflow-hidden rounded-xl border p-2",)} >
+            <Image src={review.img} alt="" height={100}  />
         </figure>
           ))}
-        </Marquee>
+        </Marquee> */}
         <Marquee reverse pauseOnHover className="[--duration:20s]">
-          {secondRow.map((review) => (
-            <figure className={cn( "relative w-64 cursor-pointer overflow-hidden rounded-xl border p-2",)}>
-            <img  alt="" src={review.img} />
+          {secondRow.map((review,index) => (
+            <figure key={index} className={cn( "relative w-100 cursor-pointer overflow-hidden rounded-xl border p-2",)}>
+            {/* <img  alt="" src={review.img} /> */}
+            <Image src={review.img} alt="" />
         </figure>
           ))}
         </Marquee>

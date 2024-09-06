@@ -1,18 +1,17 @@
 "use client";
-import {  Dropdown,  DropdownTrigger,  DropdownMenu,  DropdownSection,  DropdownItem} from "@nextui-org/dropdown";
+import {  Dropdown,  DropdownTrigger,  DropdownMenu,  DropdownItem} from "@nextui-org/dropdown";
 import React,{useState} from 'react'
 import logo from '@/public/logo.png'
 import Image from 'next/image'
-import styles from '../styles/navbar.module.css'
 import {Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, NavbarContent, NavbarItem, Link, Button} from "@nextui-org/react";
 export default function Navbarapp() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [selectedKeys, setSelectedKeys] = React.useState(new Set(["text"]));
+    // const [selectedKeys, setSelectedKeys] = React.useState(new Set(["text"]));
 
-    const selectedValue = React.useMemo(
-      () => Array.from(selectedKeys).join(", ").replaceAll("_", " "),
-      [selectedKeys]
-    );
+    // const selectedValue = React.useMemo(
+    //   () => Array.from(selectedKeys).join(", ").replaceAll("_", " "),
+    //   [selectedKeys]
+    // );
     const menuItems = [
       "Profile",
       "Dashboard",
@@ -90,7 +89,7 @@ export default function Navbarapp() {
         variant="flat"
         disallowEmptySelection
         selectionMode="single"
-        selectedKeys={selectedKeys}
+        // selectedKeys={selectedKeys}
         // onSelectionChange={setSelectedKeys}
       >
         <DropdownItem key="text"><Link href="/team">CURRENT TEAM</Link></DropdownItem>

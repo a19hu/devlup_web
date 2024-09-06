@@ -1,8 +1,5 @@
 import {Card, CardHeader, CardBody, Image,CardFooter,Button} from "@nextui-org/react";
 
-   
-  
-   
 export default function Page() {
 
     return (
