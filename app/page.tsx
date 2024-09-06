@@ -8,7 +8,7 @@ import Contact from '@/components/Contact';
 export default function Home() {
   return (
     <div className={styles.home}>
-    <div className={styles.home_landing}>
+    <div className={styles.home_landing} >
 <div className={styles.home_container}>
     <div>
         <div style={{fontSize:'60px',fontWeight:'800'}}>DevlUp Labs</div>
@@ -23,7 +23,7 @@ export default function Home() {
     <Gallery/>
 <div className='video_container'>
     <div>Video</div>
-    <div className="relative w-100 flex gap-20">
+    <div className="relative w-100 flex gap-10 flex-row max-md:flex-col mx-[400px] max-md:mx-[20px] my-20">
     <HeroVideoDialog
         className="dark:hidden block"
         animationStyle="from-center"
@@ -34,9 +34,9 @@ export default function Home() {
       <HeroVideoDialog
         className="dark:hidden block"
         animationStyle="from-center"
-        videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
+        videoSrc="https://www.youtube.com/embed/56xFUD8O9yI?si=Mq0VaaV4mVTA_KO0"
         thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
-        thumbnailAlt="Hero Video"
+        thumbnailAlt="YouTube video player"
       />
       <HeroVideoDialog
         className="dark:hidden block"
@@ -45,7 +45,29 @@ export default function Home() {
         thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
         thumbnailAlt="Hero Video"
       />
-      
+    </div>
+    <div className="relative w-100 flex gap-10 flex-row max-md:flex-col mx-[400px] max-md:mx-[20px] my-20">
+    <HeroVideoDialog
+        className="dark:hidden block"
+        animationStyle="from-center"
+        videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
+        thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
+        thumbnailAlt="Hero Video"
+      />
+      <HeroVideoDialog
+        className="dark:hidden block"
+        animationStyle="from-center"
+        videoSrc="https://www.youtube.com/embed/56xFUD8O9yI?si=Mq0VaaV4mVTA_KO0"
+        thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
+        thumbnailAlt="YouTube video player"
+      />
+      <HeroVideoDialog
+        className="dark:hidden block"
+        animationStyle="from-center"
+        videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
+        thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
+        thumbnailAlt="Hero Video"
+      />
     </div>
     <Contact/>
 </div>

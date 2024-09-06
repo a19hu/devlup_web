@@ -12,18 +12,6 @@ export default function Navbarapp() {
     //   () => Array.from(selectedKeys).join(", ").replaceAll("_", " "),
     //   [selectedKeys]
     // );
-    const menuItems = [
-      "Profile",
-      "Dashboard",
-      "Activity",
-      "Analytics",
-      "System",
-      "Deployments",
-      "My Settings",
-      "Team Settings",
-      "Help & Feedback",
-      "Log Out",
-    ];
 
   return (
     <>
@@ -53,17 +41,21 @@ export default function Navbarapp() {
       </NavbarContent>
 
       <NavbarContent className="sm:hidden pr-3" justify="center">
+      <Link href="/">
         <NavbarBrand>
         <Image src={logo} alt=''/>
           <p className="font-bold text-inherit">Devlup Labs</p>
         </NavbarBrand>
+          </Link>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
+          <Link href="/">
         <NavbarBrand>
         <Image src={logo} alt=''/>
           <p className="font-bold text-inherit">Devlup Labs</p>
         </NavbarBrand>
+          </Link>
       </NavbarContent>
 
       <NavbarContent justify="end" className='gap-7'>
@@ -99,20 +91,46 @@ export default function Navbarapp() {
       </NavbarContent>
 
       <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
+          <NavbarMenuItem >
+          <Link
               className="w-full"
-              color={
-                index === 2 ? "warning" : index === menuItems.length - 1 ? "danger" : "foreground"
-              }
+              color={"danger"}
               href="#"
               size="lg"
             >
-              {item}
+              HOME
+            </Link>
+            <Link
+              className="w-full"
+              // color={
+              //   index === 2 ? "warning" : index === menuItems.length - 1 ? "danger" : "foreground"
+              // }
+              href="#"
+              size="lg"
+            >
+              PROJECTS
+            </Link>
+            <Link
+              className="w-full"
+              // color={
+              //   index === 2 ? "warning" : index === menuItems.length - 1 ? "danger" : "foreground"
+              // }
+              href="#"
+              size="lg"
+            >
+              TIMELINE
+            </Link>
+            <Link
+              className="w-full"
+              // color={
+              //   index === 2 ? "warning" : index === menuItems.length - 1 ? "danger" : "foreground"
+              // }
+              href="#"
+              size="lg"
+            >
+              WOC
             </Link>
           </NavbarMenuItem>
-        ))}
       </NavbarMenu>
     </Navbar>
     </>
