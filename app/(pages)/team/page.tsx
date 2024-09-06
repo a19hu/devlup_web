@@ -1,8 +1,8 @@
 "use client";
-import React, { useState } from 'react';
+import React from 'react';
 import {Card, CardBody, Image} from "@nextui-org/react";
 export default function Page() {
-  const [liked, setLiked] = useState(false)
+  // const [liked, setLiked] = useState(false)
 
     return (
        <div className="flex p-8 pl-[30%] pr-[20%] gap-20 flex-row">
