@@ -1,0 +1,6 @@
+.side_navbar{
+    /* display: block; */
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
