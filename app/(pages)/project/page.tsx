@@ -64,7 +64,7 @@ export default function Page() {
         {Projects.map((data,index) => (
           <Card
           isFooterBlurred
-          className=" h-[300px] col-span-12 sm:col-span-7"
+          className=" h-[300px] col-span-12 sm:col-span-7 w-[300px]"
           key={index}
         >
           <CardHeader className="absolute z-10 top-1 flex-col items-start">
@@ -76,7 +76,7 @@ export default function Page() {
             removeWrapper
             alt="Relaxing app background"
             className="z-0 w-full h-full object-cover"
-            src="https://nextui.org/images/card-example-5.jpeg"
+            src="https://nextui.org/images/card-exampl-5.jpeg"
           />
           <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100 flex justify-between">
           <a href={data.website} target="_blank">
@@ -100,7 +100,7 @@ export default function Page() {
         {Blogs.map((data, index) => (
           <Card
             isFooterBlurred
-            className=" h-[300px] col-span-12 sm:col-span-7"
+            className=" h-[300px] col-span-12 sm:col-span-7 w-[300px]"
             key={index}
           >
             <CardHeader className="absolute z-10 top-1 flex-col items-start">
@@ -112,7 +112,7 @@ export default function Page() {
               removeWrapper
               alt="Relaxing app background"
               className="z-0 w-full h-full object-cover"
-              src="https://nextui.org/images/card-example-5.jpeg"
+              src="https://nextui.org/images/card-exampl-5.jpeg"
             />
             <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
               <div className="flex flex-grow gap-2 items-center">

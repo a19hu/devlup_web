@@ -105,7 +105,7 @@ export default function Navbarapp() {
               // color={
               //   index === 2 ? "warning" : index === menuItems.length - 1 ? "danger" : "foreground"
               // }
-              href="#"
+              href="/project"
               size="lg"
             >
               PROJECTS

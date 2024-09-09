@@ -12,17 +12,17 @@ export default function Home() {
 <div className={styles.home_container}>
     <div>
         <div style={{fontSize:'60px',fontWeight:'800'}}>DevlUp Labs</div>
-        <div style={{fontSize:'40px'}}>Open Source & Development <br /> Club IIT Jodhpur</div>
+        <div style={{fontSize:'40px'}}>Open Source Development  <br />  Enthusiasts Group @ IIT Jodhpur</div>
     </div>
     <div>
      <Image src={logo_home} alt="" />
     </div>
     </div>
 </div>
-<div>Gallery</div>
+<div className='flex justify-center text-4xl mb-20 font-black'>Gallery</div>
     <Gallery/>
 <div className='video_container'>
-    <div>Video</div>
+    <div className='flex justify-center text-4xl mb-20 mt-20 font-black'>Video</div>
     <div className="relative w-100 flex gap-10 flex-row max-md:flex-col mx-[400px] max-md:mx-[20px] my-20">
     <HeroVideoDialog
         className="dark:hidden block"
