@@ -34,8 +34,8 @@ export default function Gallery() {
         <>
         <div className="relative flex  w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background ">
         <Marquee pauseOnHover className="[--duration:20s]">
-          {firstRow.map((review) => (
-            <figure className={cn( "relative cursor-pointer overflow-hidden rounded-xl border p-2",)} >
+          {firstRow.map((review,index) => (
+            <figure key={index} className={cn( "relative cursor-pointer overflow-hidden rounded-xl border p-2",)} >
             <Image src={review.img} alt=""  className={styles.gallery_image_list}  />
         </figure>
           ))}

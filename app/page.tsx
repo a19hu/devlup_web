@@ -4,7 +4,8 @@ import styles from '../styles/home.module.css'
 import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
 import Gallery from '@/components/Gallery';
 import Contact from '@/components/Contact';
-
+import Principle from '@/components/Principle'
+import ShinyButton from "@/components/magicui/shiny-button";
 export default function Home() {
   return (
     <div className={styles.home}>
@@ -19,11 +20,13 @@ export default function Home() {
     </div>
     </div>
 </div>
+<div className='flex justify-center text-4xl mb-20 font-black'>Guiding Principles</div>
+   <Principle/>
 <div className='flex justify-center text-4xl mb-20 font-black'>Gallery</div>
     <Gallery/>
 <div className='video_container'>
     <div className='flex justify-center text-4xl mb-20 mt-20 font-black'>Video</div>
-    <div className="relative w-100 flex gap-10 flex-row max-md:flex-col mx-[400px] max-md:mx-[20px] my-20">
+    <div className="relative w-100 flex gap-10 flex-row max-md:flex-col  my-20 p-8 pl-[20%] pr-[20%] max-sm:px-[5%] max-md:px-[5%] max-lg:px-[10%] max-xl:px-[10%]">
     <HeroVideoDialog
         className="dark:hidden block"
         animationStyle="from-center"
@@ -46,7 +49,7 @@ export default function Home() {
         thumbnailAlt="Hero Video"
       />
     </div>
-    <div className="relative w-100 flex gap-10 flex-row max-md:flex-col mx-[400px] max-md:mx-[20px] my-20">
+    <div className="relative w-100 flex gap-10 flex-row max-md:flex-col   p-8 pl-[20%] pr-[20%] max-sm:px-[5%] max-md:px-[5%] max-lg:px-[10%] max-xl:px-[10%]">
     <HeroVideoDialog
         className="dark:hidden block"
         animationStyle="from-center"
@@ -69,6 +72,12 @@ export default function Home() {
         thumbnailAlt="Hero Video"
       />
     </div>
+    <div className="flex justify-center items-center pb-10  ">
+        <a href="https://www.youtube.com/channel/UCFaRxxB8-BB5GXH-wlwGqIw" target="_blank" rel="noopener noreferrer">
+        <ShinyButton>YOUTUBE CHANEL</ShinyButton>
+        </a>
+          
+        </div>
     <Contact/>
 </div>
 

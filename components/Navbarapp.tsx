@@ -65,7 +65,10 @@ export default function Navbarapp() {
           <Link href="/project">PROJECTS</Link>
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">
-          <Link href="#">TIMELINE</Link>
+          <Link href="/blogs">BLOGS</Link>
+        </NavbarItem>
+        <NavbarItem className="hidden lg:flex">
+          <Link href="/timeline">TIMELINE</Link>
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">
           <Link href="#">WOC</Link>
@@ -85,7 +88,7 @@ export default function Navbarapp() {
         // onSelectionChange={setSelectedKeys}
       >
         <DropdownItem key="text"><Link href="/team">CURRENT TEAM</Link></DropdownItem>
-        <DropdownItem key="text"><Link href="/team">ALUMNI TEAM</Link></DropdownItem>
+        <DropdownItem key="text"><Link href="/alumni">ALUMNI TEAM</Link></DropdownItem>
       </DropdownMenu>
     </Dropdown>
       </NavbarContent>
@@ -109,6 +112,16 @@ export default function Navbarapp() {
               size="lg"
             >
               PROJECTS
+            </Link>
+            <Link
+              className="w-full"
+              // color={
+              //   index === 2 ? "warning" : index === menuItems.length - 1 ? "danger" : "foreground"
+              // }
+              href="/project"
+              size="lg"
+            >
+              BLOGS
             </Link>
             <Link
               className="w-full"

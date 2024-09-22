@@ -41,7 +41,7 @@ export default function Page() {
       }}
       >
       <div className="flex justify-center text-4xl  mb-10 font-black text-white ">
-        TEAM
+        ALUMNI
       </div>
       </div>
        <div className="flex p-8 pl-[15%] pr-[15%] gap-20 flex-row max-sm:flex-col max-sm:px-[5%] max-md:px-[5%] max-lg:px-[10%] max-xl:px-[10%] justify-center">
