@@ -1,36 +1,14 @@
 from django.db import models
-from .constants import (DEFAULT_URL, 
-                        POSITION_CHOICES, 
-                        STATUS_CHOICES, 
-                        TEAM_CHOICES)
-
-class Student(models.Model):
-    name= models.CharField(max_length=100,null=False,blank=False)
-    phone=models.CharField(max_length=10)
-    hometown=models.CharField(max_length=100)
-    branch=models.CharField(max_length=100)
-    email=models.CharField(max_length=30)
-    postion=models.CharField(max_length=100,choices=POSITION_CHOICES)
-    status=models.CharField(max_length=100,choices=STATUS_CHOICES)
-    team=models.CharField(max_length=10,choices=TEAM_CHOICES)
-    instagram=models.CharField(max_length=100)
-    linkedin=models.CharField(max_length=100)
-    discription=models.CharField(max_length=100)
-    picture=models.ImageField(upload_to='images')
+from datetime import datetime
+DEFAULT_URL="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtIZ5I4Qg-MO4Q6VYx8HgfqoNI-Ot4HRZVZTe8zQqkdZ-up5dE"
 
 
-class SWCMembers(models.Model):
-    type_mem = models.CharField(
-        max_length=100, null=True, blank=True, default="student"
-    )
+class Members(models.Model):
     role = models.CharField(max_length=100, null=True, blank=True)
     year = models.IntegerField(null=True, blank=True, default=2024)
     name= models.CharField(max_length=100,null=True,blank=True)
-    phone=models.CharField(max_length=100,null=True,blank=True)
-    hometown=models.CharField(max_length=100,null=True,blank=True)
-    branch=models.CharField(max_length=100,null=True,blank=True)
     email=models.CharField(max_length=100,null=True,blank=True)
-    instagram=models.CharField(max_length=100,null=True,blank=True)
+    github=models.CharField(max_length=100,null=True,blank=True)
     linkedin=models.CharField(max_length=100,null=True,blank=True)
     description=models.CharField(max_length=250,null=True,blank=True)
     photo=models.URLField(
@@ -38,6 +16,46 @@ class SWCMembers(models.Model):
     )
     
           
-class Carousel(models.Model):
-    image=models.ImageField(upload_to='carousel')
+class Gallery(models.Model):
+    image=models.URLField(
+        null=True, blank=True, default=DEFAULT_URL, max_length=200
+    )
+
+
+class Video(models.Model):
+    video=models.URLField(
+        null=True, blank=True, default=DEFAULT_URL, max_length=200
+    )
     
+class Project(models.Model):
+    name= models.CharField(max_length=100,null=False,blank=False)
+    github=models.CharField(max_length=100)
+    website=models.CharField(max_length=100)
+    discription=models.CharField(max_length=100)
+    short_discription=models.CharField(max_length=100)
+    picture=models.URLField(
+        null=True, blank=True, default=DEFAULT_URL, max_length=200
+    )
+
+class Blog(models.Model):
+    author= models.CharField(max_length=100,null=False,blank=False)
+    website=models.CharField(max_length=100)
+    discription=models.CharField(max_length=100)
+    picture=models.URLField(
+        null=True, blank=True, default=DEFAULT_URL, max_length=200
+    )
+
+
+class Timeline(models.Model):
+    name= models.CharField(max_length=100,null=False,blank=False)
+    discription=models.CharField(max_length=100)
+    date=models.DateField(default=datetime.now)
+    picture=models.URLField(
+        null=True, blank=True, default=DEFAULT_URL, max_length=200
+    )
+    pdf=models.URLField(
+        null=True, blank=True, default=DEFAULT_URL, max_length=200
+    )
+    youtube=models.URLField(
+        null=True, blank=True, default=DEFAULT_URL, max_length=200
+    )

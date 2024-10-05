@@ -1,17 +1,40 @@
 from django.contrib import admin
-from api.models import Student,Carousel,SWCMembers
+from api.models import Gallery,Members, Video, Project, Blog, Timeline
 from import_export.admin import ImportExportModelAdmin
-from .resource import ReportResource  
+from .resource import MemberResource, ProjectResource,TimelineResource, BlogResource  
 
 
-class studentAdmin(ImportExportModelAdmin):
-    resource_classes = ReportResource
+class MembersAdmin(ImportExportModelAdmin):
+    resource_class = MemberResource
     # ordering=["roll_no",]
     list_display = ["name"]
-    # search_fields = ["roll_no","name",]
+    search_fields = ["name"]
 
-admin.site.register(Student,studentAdmin)   
+class projectAdmin(ImportExportModelAdmin):
+    resource_class = ProjectResource
+    # ordering=["roll_no",]
+    list_display = ["name"]
+    search_fields = ["name"]
 
-admin.site.register(Carousel) 
 
-admin.site.register(SWCMembers,studentAdmin) 
+class timelinesAdmin(ImportExportModelAdmin):
+    resource_class = TimelineResource
+    list_display = ["name"]
+
+
+class blogAdmin(ImportExportModelAdmin):
+    resource_classes = BlogResource
+    list_display = ["author"]
+
+
+admin.site.register(Gallery) 
+
+admin.site.register(Video) 
+
+admin.site.register(Blog,blogAdmin) 
+
+admin.site.register(Timeline,timelinesAdmin) 
+
+admin.site.register(Project,projectAdmin)   
+
+admin.site.register(Members,MembersAdmin) 

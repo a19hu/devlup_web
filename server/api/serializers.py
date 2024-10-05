@@ -1,28 +1,38 @@
 from rest_framework import serializers
-from .models import Student, Carousel, SWCMembers
+from .models import Gallery,Members, Video, Project, Blog, Timeline
 
-class StudentSerializer(serializers.ModelSerializer):
+class GallerySerializer(serializers.ModelSerializer):
     class Meta:
-        model= Student
-        fields='__all__'
-    
-    
-class CarouselSerializer(serializers.ModelSerializer):
-    class Meta:
-        model=Carousel
+        model=Gallery
         fields='__all__'
 
 
-class DisplayPageStudentTeam(serializers.ModelSerializer):
+class TimelineSerializer(serializers.ModelSerializer):
     class Meta:
-        model=SWCMembers
+        model=Timeline
+        fields='__all__'
+        
+class BlogSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Blog
+        fields='__all__'
+
+class VideoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Video
+        fields='__all__'
+
+class ProjectSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Project
+        fields='__all__'
+
+class DisplayPageTeam(serializers.ModelSerializer):
+    class Meta:
+        model=Members
         fields=[
             'name',
-            'phone',
-            'hometown',
-            'branch',
             'email',
-            'instagram',
             'linkedin',
             'description',
             'photo',
