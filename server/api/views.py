@@ -49,58 +49,10 @@ class FetchTimeline(APIView):
      
 
 class FetchMembers(APIView):
-    """
-    GET API TO FETCH ALL SWC MEMBERS DETAILS
-
-    Example cURL:
-    curl --location 'http://localhost:8000/api/fetch-students?role=assistant_head&type=student&year=2024'
-    """
-    
     def get(self, request):
-        role = request.GET.get("role", None)
-        year = request.GET.get("year", None)
-
-        logger.info("Fetch MEMBERS")
-
-        if not role or not year:
-            logger.error("Query Params not present")
-            return Response(
-                data={
-                    "msg": "Please enter relevant query"
-                },
-                status=status.HTTP_400_BAD_REQUEST
-            )
-        
-        logger.info("Query Params Verified")
-
-        queryset = SWCMembers.objects.filter(
-            role=role
-        )
-
-        logger.info(queryset)
-
-        if queryset.exists():
-        
-            serialized_objs = DisplayPageTeam(data=queryset, many=True)
-            
-            logger.debug(f"Serialized ok, {serialized_objs.is_valid()}")
-
-            return Response(
-                data={
-                    "response": serialized_objs.data
-                }
-            )
-        else:
-            return Response(
-                data={
-                    "msg": "Empty Queryset"
-                },
-                status=status.HTTP_400_BAD_REQUEST
-            )
-
-
-
-    
-    
-    
-   
+        try:
+            members = Members.objects.all()
+            members_list = list(members.values())
+            return JsonResponse(members_list, status=200, safe=False)
+        except Exception as e:
+            return JsonResponse({'error': str(e)}, status=500)

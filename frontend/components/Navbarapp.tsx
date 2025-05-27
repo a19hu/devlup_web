@@ -71,7 +71,7 @@ export default function Navbarapp() {
           <Link href="/timeline">TIMELINE</Link>
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">
-          <Link href="#">WOC</Link>
+          <Link href="https://devluplabs.iitj.ac.in/" target="_blank">WOC</Link>
         </NavbarItem>
         <Dropdown>
       <DropdownTrigger>

@@ -4,26 +4,26 @@ from import_export.admin import ImportExportModelAdmin
 from .resource import MemberResource, ProjectResource,TimelineResource, BlogResource  
 
 
+@admin.register(Members)
 class MembersAdmin(ImportExportModelAdmin):
-    resource_class = MemberResource
-    # ordering=["roll_no",]
     list_display = ["name"]
     search_fields = ["name"]
+    skip_admin_log = True 
 
 class projectAdmin(ImportExportModelAdmin):
-    resource_class = ProjectResource
+    resource_classes = [ProjectResource]
     # ordering=["roll_no",]
     list_display = ["name"]
     search_fields = ["name"]
 
 
 class timelinesAdmin(ImportExportModelAdmin):
-    resource_class = TimelineResource
+    resource_classes = [TimelineResource]
     list_display = ["name"]
 
 
 class blogAdmin(ImportExportModelAdmin):
-    resource_classes = BlogResource
+    resource_classes = [BlogResource]
     list_display = ["author"]
 
 
@@ -37,4 +37,3 @@ admin.site.register(Timeline,timelinesAdmin)
 
 admin.site.register(Project,projectAdmin)   
 
-admin.site.register(Members,MembersAdmin) 

@@ -6,15 +6,12 @@ DEFAULT_URL="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtIZ5I4Qg-MO4
 class Members(models.Model):
     role = models.CharField(max_length=100, null=True, blank=True)
     year = models.IntegerField(null=True, blank=True, default=2024)
-    name= models.CharField(max_length=100,null=True,blank=True)
-    email=models.CharField(max_length=100,null=True,blank=True)
-    github=models.CharField(max_length=100,null=True,blank=True)
-    linkedin=models.CharField(max_length=100,null=True,blank=True)
-    description=models.CharField(max_length=250,null=True,blank=True)
-    photo=models.URLField(
-        null=True, blank=True, default=DEFAULT_URL, max_length=200
-    )
-    
+    name = models.CharField(max_length=100, null=True, blank=True)
+    email = models.CharField(max_length=100, null=True, blank=True)
+    github = models.CharField(max_length=100, null=True, blank=True)
+    linkedin = models.CharField(max_length=100, null=True, blank=True)
+    description = models.CharField(max_length=250, null=True, blank=True)
+    photo = models.URLField(null=True, blank=True, default=DEFAULT_URL, max_length=200)
           
 class Gallery(models.Model):
     image=models.URLField(
